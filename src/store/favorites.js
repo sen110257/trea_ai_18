@@ -54,7 +54,7 @@ export const useFavoritesStore = defineStore('favorites', () => {
   }
 
   const getAllFavorites = () => {
-    return [...favorites.value.templates, ...favorites.value.venues, ...favorites.value.staffs
+    return [...favorites.value.templates, ...favorites.value.venues, ...favorites.value.staffs]
   }
 
   return {

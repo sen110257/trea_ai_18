@@ -4,7 +4,7 @@ import router from './router'
 import pinia from './store'
 import './styles/index.less'
 import 'vant/lib/index.css'
-import { Button, Icon, Swipe, SwipeItem, Tabbar, TabbarItem, NavBar, Search, Cell, CellGroup, Card, List, PullRefresh, Image as VanImage, Popup, Picker, Calendar, Area, Tag, Rate, Stepper, Checkbox, CheckboxGroup, Radio, RadioGroup, Uploader, ActionSheet, Dialog, Toast, Notify, Loading, Empty, Divider, Badge, Overlay, Lazyload, Tabs, Tab, Field } from 'vant'
+import { Button, Icon, Swipe, SwipeItem, Tabbar, TabbarItem, NavBar, Search, Cell, CellGroup, Card, List, PullRefresh, Image as VanImage, Popup, Picker, Calendar, Area, Tag, Rate, Stepper, Checkbox, CheckboxGroup, Radio, RadioGroup, Uploader, ActionSheet, Dialog, Toast, Notify, Loading, Empty, Divider, Badge, Overlay, Lazyload, Tabs, Tab, Field, ImagePreview } from 'vant'
 
 const app = createApp(App)
 
@@ -49,5 +49,6 @@ app.use(Lazyload)
 app.use(Tabs)
 app.use(Tab)
 app.use(Field)
+app.use(ImagePreview)
 
 app.mount('#app')

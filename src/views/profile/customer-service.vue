@@ -41,7 +41,7 @@
       <div class="faq-section">
         <h3 class="section-title">常见问题</h3>
         <van-cell-group inset>
-          <van-cell title="如何预约婚礼场地？" is-link @click="showFaq(1" />
+          <van-cell title="如何预约婚礼场地？" is-link @click="showFaq(1)" />
           <van-cell title="如何修改预约信息？" is-link @click="showFaq(2)" />
           <van-cell title="取消预约需要提前多久？" is-link @click="showFaq(3)" />
           <van-cell title="如何查看订单状态？" is-link @click="showFaq(4)" />
