@@ -13,7 +13,7 @@
               v-model="registerForm.phone"
               type="tel"
               placeholder="请输入手机号"
-              border="false"
+              :border="false"
               maxlength="11"
             />
           </van-cell>
@@ -25,7 +25,7 @@
               v-model="registerForm.code"
               type="text"
               placeholder="请输入验证码"
-              border="false"
+              :border="false"
               maxlength="6"
             >
               <template #button>
@@ -49,7 +49,7 @@
               v-model="registerForm.nickname"
               type="text"
               placeholder="请输入昵称"
-              border="false"
+              :border="false"
               maxlength="20"
             />
           </van-cell>
@@ -61,7 +61,7 @@
               v-model="registerForm.password"
               :type="showPassword ? 'text' : 'password'"
               placeholder="请设置密码(6-20位)"
-              border="false"
+              :border="false"
               maxlength="20"
             >
               <template #button>
@@ -82,7 +82,7 @@
               v-model="registerForm.confirmPassword"
               :type="showConfirmPassword ? 'text' : 'password'"
               placeholder="请确认密码"
-              border="false"
+              :border="false"
               maxlength="20"
             >
               <template #button>

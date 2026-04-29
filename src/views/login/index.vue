@@ -21,7 +21,7 @@
               v-model="loginForm.phone"
               type="tel"
               placeholder="请输入手机号"
-              border="false"
+              :border="false"
               maxlength="11"
             />
           </van-cell>
@@ -33,7 +33,7 @@
               v-model="loginForm.password"
               :type="showPassword ? 'text' : 'password'"
               placeholder="请输入密码"
-              border="false"
+              :border="false"
             >
               <template #button>
                 <van-icon
@@ -213,6 +213,7 @@ const goToRegister = () => {
   }
 
   .btn-login {
+    width: 100%;
     height: 44px;
     border-radius: 22px;
     background: linear-gradient(135deg, #D4AF37, #F5E6C8);
@@ -220,7 +221,7 @@ const goToRegister = () => {
     color: #FFFFFF;
     font-size: 15px;
     font-weight: 600;
-    margin: 24px 16px 0;
+    margin: 24px 0 0;
   }
 
   .register-link {

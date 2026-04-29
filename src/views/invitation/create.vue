@@ -58,7 +58,7 @@
               <van-field
                 v-model="invitationData.groomName"
                 placeholder="请输入新郎姓名"
-                border="false"
+                :border="false"
                 align="right"
                 maxlength="20"
               />
@@ -69,7 +69,7 @@
               <van-field
                 v-model="invitationData.brideName"
                 placeholder="请输入新娘姓名"
-                border="false"
+                :border="false"
                 align="right"
                 maxlength="20"
               />
@@ -102,7 +102,7 @@
               <van-field
                 v-model="invitationData.weddingAddress"
                 placeholder="请输入详细地址"
-                border="false"
+                :border="false"
                 align="right"
                 maxlength="100"
               />
@@ -195,9 +195,21 @@ const showDatePicker = ref(false)
 const showTimePicker = ref(false)
 
 const timeColumns = [
-  '08:00', '09:00', '10:00', '11:00', '11:30',
-  '12:00', '12:30', '13:00', '17:00', '17:30',
-  '18:00', '18:30', '19:00', '19:30', '20:00'
+  { text: '08:00', value: '08:00' },
+  { text: '09:00', value: '09:00' },
+  { text: '10:00', value: '10:00' },
+  { text: '11:00', value: '11:00' },
+  { text: '11:30', value: '11:30' },
+  { text: '12:00', value: '12:00' },
+  { text: '12:30', value: '12:30' },
+  { text: '13:00', value: '13:00' },
+  { text: '17:00', value: '17:00' },
+  { text: '17:30', value: '17:30' },
+  { text: '18:00', value: '18:00' },
+  { text: '18:30', value: '18:30' },
+  { text: '19:00', value: '19:00' },
+  { text: '19:30', value: '19:30' },
+  { text: '20:00', value: '20:00' }
 ]
 
 const blessingTemplates = [
@@ -242,8 +254,8 @@ const onDateConfirm = (value) => {
   showDatePicker.value = false
 }
 
-const onTimeConfirm = ({ selectedOptions }) => {
-  invitationData.value.weddingTime = selectedOptions[0].text
+const onTimeConfirm = ({ selectedValues }) => {
+  invitationData.value.weddingTime = selectedValues[0]
   showTimePicker.value = false
 }
 
