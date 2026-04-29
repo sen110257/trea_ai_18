@@ -17,7 +17,7 @@
             <van-field
               v-model="formData.name"
               placeholder="请输入您的姓名"
-              border="false"
+              :border="false"
               align="right"
               :rules="[{ required: true, message: '请输入姓名' }]"
             />
@@ -29,7 +29,7 @@
               v-model="formData.phone"
               type="tel"
               placeholder="请输入手机号码"
-              border="false"
+              :border="false"
               align="right"
               :rules="[{ required: true, message: '请输入手机号' }]"
             />
@@ -133,7 +133,16 @@ const router = useRouter()
 const showGuestPicker = ref(false)
 
 const guestOptions = [
-  '1人', '2人', '3人', '4人', '5人', '6人', '7人', '8人', '9人', '10人及以上'
+  { text: '1人', value: '1人' },
+  { text: '2人', value: '2人' },
+  { text: '3人', value: '3人' },
+  { text: '4人', value: '4人' },
+  { text: '5人', value: '5人' },
+  { text: '6人', value: '6人' },
+  { text: '7人', value: '7人' },
+  { text: '8人', value: '8人' },
+  { text: '9人', value: '9人' },
+  { text: '10人及以上', value: '10人及以上' }
 ]
 
 const formData = reactive({
@@ -164,8 +173,8 @@ const validateForm = () => {
   return true
 }
 
-const onGuestConfirm = ({ selectedOptions }) => {
-  const text = selectedOptions[0].text
+const onGuestConfirm = ({ selectedValues }) => {
+  const text = selectedValues[0]
   if (text === '10人及以上') {
     formData.guestCount = 10
   } else {

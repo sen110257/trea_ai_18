@@ -21,7 +21,7 @@
             <van-field
               v-model="editForm.nickname"
               placeholder="请输入昵称"
-              border="false"
+              :border="false"
               align="right"
               maxlength="20"
             />
@@ -55,7 +55,7 @@
               v-model="editForm.email"
               type="email"
               placeholder="请输入邮箱"
-              border="false"
+              :border="false"
               align="right"
               maxlength="50"
             />
@@ -125,7 +125,11 @@ const showDatePicker = ref(false)
 const showAreaPicker = ref(false)
 const currentDate = ref(new Date())
 
-const genderOptions = ['男', '女', '保密']
+const genderOptions = [
+  { text: '男', value: '男' },
+  { text: '女', value: '女' },
+  { text: '保密', value: '保密' }
+]
 
 const minDate = new Date(1950, 0, 1)
 const maxDate = new Date()
@@ -162,8 +166,8 @@ const changeAvatar = () => {
   showToast('请选择图片')
 }
 
-const onGenderConfirm = ({ selectedOptions }) => {
-  editForm.gender = selectedOptions[0].text
+const onGenderConfirm = ({ selectedValues }) => {
+  editForm.gender = selectedValues[0]
   showGenderPicker.value = false
 }
 
